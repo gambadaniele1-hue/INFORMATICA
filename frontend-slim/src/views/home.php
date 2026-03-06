@@ -24,7 +24,7 @@
             
             <?php foreach ($queryInfo as $qId => $info): ?>
                 <?php $isActive = ($id == $qId); ?>
-                <a href="/<?= $qId ?>" 
+                <a href="/query/<?= $qId ?>" 
                    class="group flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-all duration-200 
                           <?= $isActive ? 'bg-blue-600 text-white shadow-lg shadow-blue-900/50' : 'hover:bg-slate-800 hover:text-white' ?>">
                     
@@ -47,6 +47,9 @@
                     <span class="text-sm font-bold text-blue-600 tracking-wider uppercase mb-1 block">Query Selezionata</span>
                     <h2 class="text-2xl font-extrabold text-slate-800"><?= htmlspecialchars($queryInfo[$id]['title']) ?></h2>
                 </div>
+                <a href="/admin" class="bg-slate-100 hover:bg-slate-200 text-slate-800 px-4 py-2 rounded-md text-sm font-bold shadow-sm transition-colors border border-slate-300">
+                    ⚙️ Area Admin
+                </a>
             </div>
             
             <?php if (!empty($queryInfo[$id]['params'])): ?>
